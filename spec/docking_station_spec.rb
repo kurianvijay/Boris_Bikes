@@ -34,11 +34,12 @@ describe DockingStation do
   it 'returns docked bikes' do
   	bike = Bike.new
   	subject.dock(bike)
-  	#subject => is a shortcut to create an instance of the DockingStation class
+  	#subject => is a shortcut to create an instance of the DockingStation class (DockingStation.new)
   	expect(subject.bike).to eq bike
 
   end
 
+it 'raises and error '
  #  it 'it docks a bike' do
  #  station = DockingStation.new("bike")
 
