@@ -14,4 +14,35 @@ describe DockingStation do
   	bike = Bike.new
   	expect(bike.working?).to eq(true)
   end
+
+  it 'responds to #dock' do
+  	station = DockingStation.new
+    expect(station).to respond_to(:dock).with(1).argument
+  end
+
+  it 'responds to #bike' do
+  	station = DockingStation.new
+  	expect(station).to respond_to(:bike)
+  end
+
+  it 'docks something' do
+  	bike = Bike.new
+  	#station = DockingStation.new
+  	expect(DockingStation.new.dock(bike)).to eq(bike)
+  end
+
+  it 'returns docked bikes' do
+  	bike = Bike.new
+  	subject.dock(bike)
+  	#subject => is a shortcut to create an instance of the DockingStation class
+  	expect(subject.bike).to eq bike
+
+  end
+
+ #  it 'it docks a bike' do
+ #  station = DockingStation.new("bike")
+
+ #  #expect(station.dock).to eq(@bike)
+ # end  
 end
+
